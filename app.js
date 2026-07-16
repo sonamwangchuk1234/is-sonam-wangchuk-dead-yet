@@ -4,15 +4,13 @@
   const FAST_START = "2026-06-28";
   const STATUS_DATE = "2026-07-16T03:13:57Z";
 
-  function utcDayNumber(dateLike) {
+  const utcDayNumber = (dateLike) => {
     const date = new Date(dateLike);
     return Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate());
-  }
+  };
 
-  function inclusiveDay(startDate, statusDate) {
-    const millisecondsPerDay = 86_400_000;
-    return Math.floor((utcDayNumber(statusDate) - utcDayNumber(startDate)) / millisecondsPerDay) + 1;
-  }
+  const inclusiveDay = (startDate, statusDate) =>
+    Math.floor((utcDayNumber(statusDate) - utcDayNumber(startDate)) / 86_400_000) + 1;
 
   const verifiedFastDay = inclusiveDay(FAST_START, STATUS_DATE);
   document.querySelectorAll("[data-fast-day]").forEach((node) => {
@@ -20,13 +18,13 @@
   });
 
   const quips = [
-    "Current build: water-cooled, medically supervised, politically unsupported.",
-    "Day 19 patch notes: body mass down; public concern up; ministerial callback still pending.",
-    "Engineer discovers that converting stored energy into headlines is terribly inefficient.",
-    "The protest has entered its ‘somebody please answer the phone’ era.",
-    "Calories: reportedly zero. Camera batteries: somehow immortal.",
-    "The accountability feature remains stuck in closed beta.",
-    "Breaking: a giant red ‘NO’ continues to outperform several official communication channels."
+    "Day 19: the body may be fasting; the publicity machine is not.",
+    "One cot. One bottle. Unlimited moral grandstanding.",
+    "The protest remains fully charged on camera batteries.",
+    "Inventor discovers a renewable resource: public guilt.",
+    "Food intake down. Headline intake at an all-time high.",
+    "The most crowded part of the hunger strike is the camera angle.",
+    "Breaking: self-denial has once again been mistaken for an argument."
   ];
 
   const quipButton = document.querySelector("#quip-button");
@@ -49,20 +47,20 @@
 
   const shareButton = document.querySelector("#share-button");
   const shareFeedback = document.querySelector("#share-feedback");
-  const shareText = "Is Sonam Wangchuk dead yet? No. (A clearly labeled satire tracker with sources.)";
+  const shareText = "Is Sonam Wangchuk dead yet? No. The fast continues; so does the publicity cycle.";
 
   async function sharePage() {
     try {
       if (navigator.share) {
         await navigator.share({ title: document.title, text: shareText, url: window.location.href });
-        shareFeedback.textContent = "Shared. Civilization continues for now.";
+        shareFeedback.textContent = "Shared. The publicity cycle thanks you.";
         return;
       }
       await navigator.clipboard.writeText(`${shareText} ${window.location.href}`);
-      shareFeedback.textContent = "Link copied. Use this power irresponsibly, but accurately.";
+      shareFeedback.textContent = "Link copied. Attention successfully redistributed.";
     } catch (error) {
       if (error && error.name === "AbortError") return;
-      shareFeedback.textContent = "Sharing failed. The old-fashioned URL bar remains operational.";
+      shareFeedback.textContent = "Sharing failed. Even the publicity machine needs maintenance.";
     }
   }
 
@@ -72,6 +70,8 @@
     fastStart: FAST_START,
     statusDate: STATUS_DATE,
     verifiedFastDay,
-    inclusiveDay
+    inclusiveDay,
+    samosaCount: 404,
+    samosaCountIsSatire: true
   });
 })();
