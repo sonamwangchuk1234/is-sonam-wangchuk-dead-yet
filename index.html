@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f0442f">
+  <meta name="description" content="A clearly labeled satirical status page about Sonam Wangchuk's 2026 hunger strike, with a reality-check section and cited reporting.">
+  <meta property="og:title" content="Is Sonam Wangchuk Dead Yet?">
+  <meta property="og:description" content="No. A live-ish parody tracker with actual receipts.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <title>Is Sonam Wangchuk Dead Yet? — Satire Status</title>
+  <link rel="stylesheet" href="styles.css?v=2">
+  <script src="app.js?v=2" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the status</a>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span>NOT DEAD</span><span>STILL FASTING</span><span>GOVERNMENT RESPONSE: BUFFERING</span><span>PARODY, OBVIOUSLY</span>
+      <span>NOT DEAD</span><span>STILL FASTING</span><span>GOVERNMENT RESPONSE: BUFFERING</span><span>PARODY, OBVIOUSLY</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Dead Yet home">
+      <span class="brand__mark" aria-hidden="true">DY?</span>
+      <span>DEAD YET?</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#status">Status</a>
+      <a href="#patch-notes">Patch notes</a>
+      <a href="#receipts">Receipts</a>
+      <a href="#fine-print">Fine print</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="page-title">
+      <div class="hero__copy">
+        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> MANUALLY VERIFIED · 16 JUL 2026</p>
+        <h1 id="page-title">IS SONAM<br>WANGCHUK<br>DEAD YET?</h1>
+        <div class="answer" aria-label="Answer: No">
+          <span class="answer__shadow" aria-hidden="true">NO.</span>
+          <span class="answer__front">NO.</span>
+        </div>
+        <p class="hero__lede">
+          As of the last check, current reporting described him as alive, very weak,
+          under round-the-clock medical supervision, and still conducting an indefinite fast.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--dark" href="#receipts">Show me the receipts ↓</a>
+          <button class="button button--light" id="share-button" type="button">Share this bad idea</button>
+        </div>
+        <p class="microcopy" id="share-feedback" aria-live="polite">
+          This is parody, not a death notice or medical source.
+        </p>
+      </div>
+
+      <aside class="monitor" id="status" aria-label="Satirical status monitor">
+        <div class="monitor__topline">
+          <span>SUBJECT: SW-1966</span>
+          <span class="monitor__online"><i aria-hidden="true"></i> ONLINE*</span>
+        </div>
+
+        <div class="monitor__screen">
+          <svg class="monitor__graphic" viewBox="0 0 640 330" role="img" aria-labelledby="monitor-title monitor-desc">
+            <title id="monitor-title">Satirical life-status monitor</title>
+            <desc id="monitor-desc">A pulsing line crosses a stylized status panel and ends at the word alive.</desc>
+            <defs>
+              <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+                <path d="M 28 0 L 0 0 0 28" fill="none" stroke="currentColor" stroke-opacity=".13" stroke-width="1"/>
+              </pattern>
+            </defs>
+            <rect width="640" height="330" rx="18" fill="url(#grid)"/>
+            <path class="pulse-line" d="M0 150 H88 L112 150 L134 106 L158 188 L181 62 L208 150 H310"/>
+            <g class="monitor__stamp" transform="translate(350 52) rotate(-4)">
+              <rect width="238" height="96" rx="8"/>
+              <text x="119" y="64" text-anchor="middle">ALIVE</text>
+            </g>
+            <rect class="monitor__lower-band" x="0" y="210" width="640" height="120"/>
+            <text class="monitor__tiny" x="28" y="42">SATIRE-O-METER / CHANNEL 01</text>
+            <text class="monitor__number" x="28" y="294">19</text>
+            <text class="monitor__day" x="190" y="282">REPORTED FAST DAY</text>
+          </svg>
+        </div>
+
+        <dl class="monitor__readout">
+          <div><dt>Pulse</dt><dd>Reportedly present</dd></div>
+          <div><dt>Food</dt><dd>Report says water-only</dd></div>
+          <div><dt>Press cycle</dt><dd>Fully operational</dd></div>
+          <div><dt>Govt. callback</dt><dd class="error-text">404 pending</dd></div>
+        </dl>
+        <p class="monitor__asterisk">*“Online” means alive in cited reporting, not remotely monitored by this website.</p>
+      </aside>
+    </section>
+
+    <section class="stats-section" aria-labelledby="situation-title">
+      <div class="section-heading">
+        <p class="kicker">THE COMPLETELY SERIOUS SITUATION ROOM</p>
+        <h2 id="situation-title">Live-ish telemetry</h2>
+        <p>Medical precision: none. Satirical confidence: irresponsible.</p>
+      </div>
+      <div class="stat-grid">
+        <article class="stat-card stat-card--red">
+          <span class="stat-card__index">01</span>
+          <p class="stat-card__label">Alive?</p>
+          <p class="stat-card__value">YES</p>
+          <p>According to reporting checked for this page.</p>
+        </article>
+        <article class="stat-card stat-card--acid">
+          <span class="stat-card__index">02</span>
+          <p class="stat-card__label">Fast day</p>
+          <p class="stat-card__value" data-fast-day>19</p>
+          <p>Counting 28 June as day one.</p>
+        </article>
+        <article class="stat-card stat-card--cream">
+          <span class="stat-card__index">03</span>
+          <p class="stat-card__label">Reported weight change</p>
+          <p class="stat-card__value">−8.2<span> KG</span></p>
+          <p>BBC report, after sixteen days.</p>
+        </article>
+        <article class="stat-card stat-card--black">
+          <span class="stat-card__index">04</span>
+          <p class="stat-card__label">Accountability.exe</p>
+          <p class="stat-card__value stat-card__value--small">BUFFERING</p>
+          <p>No Union government meeting reported by Frontline as of 15 July.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="patch-section" id="patch-notes" aria-labelledby="patch-title">
+      <div class="patch-section__intro">
+        <p class="kicker">RELEASE NOTES</p>
+        <h2 id="patch-title">Hunger Striker™<br>v19.0</h2>
+        <p class="satire-label">SATIRICAL CHARACTERIZATION — NOT A FACTUAL PRODUCT DESCRIPTION</p>
+      </div>
+      <div class="patch-log">
+        <article>
+          <span>ADDED</span>
+          <h3>24-hour medical supervision</h3>
+          <p>A feature nobody wanted to see become necessary.</p>
+        </article>
+        <article>
+          <span>REMOVED</span>
+          <h3>8.2 kg of body mass</h3>
+          <p>Accountability remains stubbornly uninstalled.</p>
+        </article>
+        <article>
+          <span>KNOWN BUG</span>
+          <h3>Ministerial response timeout</h3>
+          <p>The callback service may be stuck in an infinite committee.</p>
+        </article>
+        <article>
+          <span>NEXT MILESTONE</span>
+          <h3>20 July Parliament march</h3>
+          <p>Announced on Wangchuk’s own X account. Reality may update before this website does.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="quip-section" aria-labelledby="quip-title">
+      <div>
+        <p class="kicker">THE INTERNET’S LEAST QUALIFIED LIVEBLOG</p>
+        <h2 id="quip-title">Generate another<br>deeply responsible update.</h2>
+      </div>
+      <div class="quip-machine">
+        <blockquote id="quip-output">“Current build: water-cooled, medically supervised, politically unsupported.”</blockquote>
+        <button class="button button--acid" id="quip-button" type="button">Spin the satire wheel ↻</button>
+      </div>
+    </section>
+
+    <section class="reality-section" aria-labelledby="reality-title">
+      <div class="reality-section__satire">
+        <p class="kicker">THE JOKE</p>
+        <h2 id="reality-title">A man famous for inventing things appears to have reinvented the press conference as a calorie-deficit endurance event.</h2>
+        <p>
+          Calling it “LARPing” is this page’s satirical opinion—not proof that the fast is fake.
+          The spectacle is fair game; his actual health is not a punchline to celebrate.
+        </p>
+      </div>
+      <div class="reality-section__fact">
+        <p class="kicker">THE REALITY</p>
+        <p>
+          Prolonged fasting can cause serious harm. The reporting cited below describes substantial weight loss,
+          weakness, and continuous medical supervision. This page does not predict, wish for, or celebrate injury or death.
+        </p>
+        <p>
+          Its narrower joke is about political theater, media theater, and the very online urge to reduce a serious protest
+          to one giant status indicator.
+        </p>
+      </div>
+    </section>
+
+    <section class="receipts-section" id="receipts" aria-labelledby="receipts-title">
+      <div class="section-heading section-heading--light">
+        <p class="kicker">REALITY RECEIPTS</p>
+        <h2 id="receipts-title">Sources behind the giant “NO.”</h2>
+        <p>Last manually checked <time datetime="2026-07-16T03:13:57Z" id="verified-time">16 July 2026, 03:13 UTC</time>.</p>
+      </div>
+
+      <div class="source-list">
+        <a class="source-card" href="https://www.rediff.com/news/report/wangchuk-begins-hunger-strike-at-jantar-mantar-khap-leaders-join-cjp-protest/20260628.htm" target="_blank" rel="noopener noreferrer">
+          <span class="source-card__number">01</span>
+          <span class="source-card__body"><strong>Fast begins at Jantar Mantar</strong><small>PTI via Rediff · 28 Jun 2026</small></span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a class="source-card" href="https://www.bbc.com/news/articles/cvgm2rz5d7lo" target="_blank" rel="noopener noreferrer">
+          <span class="source-card__number">02</span>
+          <span class="source-card__body"><strong>BBC reports 8.2 kg weight loss</strong><small>BBC News · after 16 days of fasting</small></span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a class="source-card" href="https://frontline.thehindu.com/politics/sonam-wangchuk-hunger-strike/article71223988.ece" target="_blank" rel="noopener noreferrer">
+          <span class="source-card__number">03</span>
+          <span class="source-card__body"><strong>Why Wangchuk is protesting</strong><small>Frontline · 15 Jul 2026</small></span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a class="source-card" href="https://www.thehindu.com/news/national/government-cruel-for-ignoring-wangchuks-fast-says-dipke-as-activist-completes-day-18-of-hunger-strike/article71224964.ece" target="_blank" rel="noopener noreferrer">
+          <span class="source-card__number">04</span>
+          <span class="source-card__body"><strong>Day 18 and 24-hour medical vigilance</strong><small>The Hindu / PTI · 15 Jul 2026</small></span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a class="source-card" href="https://x.com/Wangchuk66/status/2074880976069755006" target="_blank" rel="noopener noreferrer">
+          <span class="source-card__number">05</span>
+          <span class="source-card__body"><strong>Wangchuk’s own hunger-strike update</strong><small>@Wangchuk66 on X · Parliament march announcement</small></span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="fine-print">
+    <div class="footer__warning">
+      <strong>PARODY / SATIRE</strong>
+      <p>
+        Not affiliated with Sonam Wangchuk, the Cockroach Janta Party, any news outlet, GitHub, or a hospital.
+        The death-status framing is a satirical format, not a medical prediction. For current information, use the linked sources.
+      </p>
+    </div>
+    <div class="footer__bottom">
+      <p>Built for the internet, which was a mistake.</p>
+      <a href="https://github.com/sonamwangchuk1234" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+      <a href="#top">Back to the giant NO. ↑</a>
+    </div>
+  </footer>
+</body>
+</html>

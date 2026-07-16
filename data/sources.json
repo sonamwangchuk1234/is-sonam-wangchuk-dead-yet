@@ -1,0 +1,49 @@
+{
+  "status": {
+    "alive": true,
+    "checked_at": "2026-07-16T03:13:57Z",
+    "fast_start_date": "2026-06-28",
+    "fast_day_inclusive": 19,
+    "note": "Manual editorial status based on the sources below; this is not medical monitoring."
+  },
+  "sources": [
+    {
+      "id": "rediff-2026-06-28",
+      "publisher": "PTI via Rediff",
+      "title": "Wangchuk begins hunger strike at Jantar Mantar, khap leaders join CJP protest",
+      "published": "2026-06-28",
+      "url": "https://www.rediff.com/news/report/wangchuk-begins-hunger-strike-at-jantar-mantar-khap-leaders-join-cjp-protest/20260628.htm",
+      "supports": ["The fast began at Jantar Mantar on 28 June 2026."]
+    },
+    {
+      "id": "bbc-weight-loss",
+      "publisher": "BBC News",
+      "title": "Sonam Wangchuk: Activist on hunger strike at CJP protest loses 8.2kg",
+      "url": "https://www.bbc.com/news/articles/cvgm2rz5d7lo",
+      "supports": ["BBC described him as alive after sixteen days and reported 8.2 kg weight loss."]
+    },
+    {
+      "id": "frontline-2026-07-15",
+      "publisher": "Frontline",
+      "title": "Sonam Wangchuk Hunger Strike 2026: Why He Is Protesting",
+      "published": "2026-07-15",
+      "url": "https://frontline.thehindu.com/politics/sonam-wangchuk-hunger-strike/article71223988.ece",
+      "supports": ["The fast began 28 June.", "On 14 July he was 17 days into a reported water-only fast, had lost more than 8 kg, and had medics in attendance.", "As of 15 July, Frontline said no Union government official had met the protesters."]
+    },
+    {
+      "id": "the-hindu-day-18",
+      "publisher": "The Hindu / PTI",
+      "title": "Government cruel for ignoring Wangchuk's fast, says Dipke, as activist completes day 18 of hunger strike",
+      "published": "2026-07-15",
+      "url": "https://www.thehindu.com/news/national/government-cruel-for-ignoring-wangchuks-fast-says-dipke-as-activist-completes-day-18-of-hunger-strike/article71224964.ece",
+      "supports": ["He completed day 18 on 15 July and was reported under 24-hour medical vigilance."]
+    },
+    {
+      "id": "wangchuk-x-march",
+      "publisher": "Sonam Wangchuk on X",
+      "title": "Peaceful march to the Parliament, 20th July",
+      "url": "https://x.com/Wangchuk66/status/2074880976069755006",
+      "supports": ["Wangchuk referred to his ongoing hunger strike and announced a 20 July Parliament march."]
+    }
+  ]
+}
