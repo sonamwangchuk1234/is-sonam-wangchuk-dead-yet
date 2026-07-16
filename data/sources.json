@@ -44,6 +44,27 @@
       "title": "Peaceful march to the Parliament, 20th July",
       "url": "https://x.com/Wangchuk66/status/2074880976069755006",
       "supports": ["Wangchuk referred to his ongoing hunger strike and announced a 20 July Parliament march."]
+    },
+    {
+      "id": "prolonged-fasting-review",
+      "publisher": "Nutrition Reviews via PubMed Central",
+      "title": "Efficacy and safety of prolonged water fasting: a narrative review of human trials",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11494232/",
+      "supports": ["Human prolonged-fasting trials report marked rises in circulating ketones.", "Blood glucose and blood pressure can change during fasting but are nonspecific metabolic and haemodynamic measures, not proof of continuous food abstention."]
+    },
+    {
+      "id": "fasting-ketosis-1610",
+      "publisher": "Nutrients via PubMed Central",
+      "title": "Long-Term Fasting-Induced Ketosis in 1610 Subjects: Metabolic Regulation and Safety",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11206495/",
+      "supports": ["The study monitored fasting ketosis with urine acetoacetate and, in a subset, blood beta-hydroxybutyrate.", "Ketone responses varied between individuals and were affected by small carbohydrate-containing supplements and activity."]
+    },
+    {
+      "id": "ketone-measurement-review",
+      "publisher": "Diabetes Technology & Therapeutics via PubMed Central",
+      "title": "Update on Measuring Ketones",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11089855/",
+      "supports": ["Blood beta-hydroxybutyrate and urine acetoacetate document ketone production through different methods.", "Ketosis can occur with fasting, very-low-carbohydrate intake, exercise, exogenous ketones, insulin deficiency and other contexts; a ketone result alone does not prove a continuous water-only fast."]
     }
   ]
 }

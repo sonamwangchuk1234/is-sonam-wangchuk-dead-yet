@@ -45,33 +45,48 @@
     });
   }
 
-  const shareButton = document.querySelector("#share-button");
-  const shareFeedback = document.querySelector("#share-feedback");
-  const shareText = "Is Sonam Wangchuk dead yet? No. The fast continues; so does the publicity cycle.";
+  const samosaButton = document.querySelector("#samosa-button");
+  const samosaFeedback = document.querySelector("#samosa-feedback");
+  const samosaCounters = document.querySelectorAll("[data-samosa-count]");
+  const initialSamosaCount = 404;
+  let samosaCount = initialSamosaCount;
+  let samosasDelivered = 0;
 
-  async function sharePage() {
-    try {
-      if (navigator.share) {
-        await navigator.share({ title: document.title, text: shareText, url: window.location.href });
-        shareFeedback.textContent = "Shared. The publicity cycle thanks you.";
-        return;
-      }
-      await navigator.clipboard.writeText(`${shareText} ${window.location.href}`);
-      shareFeedback.textContent = "Link copied. Attention successfully redistributed.";
-    } catch (error) {
-      if (error && error.name === "AbortError") return;
-      shareFeedback.textContent = "Sharing failed. Even the publicity machine needs maintenance.";
+  const renderSamosas = () => {
+    samosaCounters.forEach((node) => {
+      node.textContent = String(samosaCount);
+    });
+    if (samosaFeedback) {
+      samosaFeedback.textContent = `Imaginary samosas delivered this visit: ${samosasDelivered}. Counter: ${samosaCount}.`;
     }
+  };
+
+  if (samosaButton) {
+    samosaButton.addEventListener("click", () => {
+      samosaCount += 1;
+      samosasDelivered += 1;
+      renderSamosas();
+      samosaButton.classList.remove("is-feeding");
+      void samosaButton.offsetWidth;
+      samosaButton.classList.add("is-feeding");
+      samosaButton.textContent = samosasDelivered === 1 ? "Feed Dipke another samosa +1" : `Feed another samosa +1`;
+    });
   }
 
-  if (shareButton) shareButton.addEventListener("click", sharePage);
+  renderSamosas();
 
   window.DeadYetStatus = Object.freeze({
     fastStart: FAST_START,
     statusDate: STATUS_DATE,
     verifiedFastDay,
     inclusiveDay,
-    samosaCount: 404,
+    initialSamosaCount,
+    get samosaCount() {
+      return samosaCount;
+    },
+    get samosasDelivered() {
+      return samosasDelivered;
+    },
     samosaCountIsSatire: true
   });
 })();

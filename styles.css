@@ -60,6 +60,8 @@ h1 { max-width: 600px; margin: 0; font-size: clamp(2.3rem,3.6vw,3.45rem); line-h
 .button:hover,.button:focus-visible { color: var(--ink); background: var(--cyan); }
 .button--ghost { color: var(--ink); background: white; }
 .button--cyan { color: var(--ink); border-color: var(--cyan-dark); background: var(--cyan); }
+.button.is-feeding { animation: samosa-pop .38s ease; background: var(--coral); }
+@keyframes samosa-pop { 50% { transform: translateY(-3px) rotate(-1deg) scale(1.04); } }
 .microcopy { min-height: 1.2em; margin: 9px 0 0; color: #555d64; font: .69rem/1.45 var(--mono); }
 .hero-art { position: relative; min-width: 0; margin: 0; border-left: 1px solid var(--line); background: var(--soft); }
 .hero-art img { display: block; width: 100%; height: 100%; min-height: 410px; object-fit: cover; object-position: center; }
@@ -82,7 +84,7 @@ h1 { max-width: 600px; margin: 0; font-size: clamp(2.3rem,3.6vw,3.45rem); line-h
 .streak,.faq,.quip,.critique,.sources { padding: 22px; }
 .dipke-gag { display: grid; grid-template-columns: minmax(0,1.24fr) minmax(350px,.76fr); overflow: hidden; color: white; background: var(--ink); }
 .dipke-gag__art { position: relative; min-width: 0; margin: 0; border-right: 1px solid #41474d; background: #f3c7a1; }
-.dipke-gag__art img { display: block; width: 100%; height: 100%; min-height: 430px; object-fit: cover; object-position: center; }
+.dipke-gag__art img { display: block; width: 100%; height: 100%; min-height: 430px; object-fit: contain; object-position: center; }
 .dipke-gag__art figcaption { position: absolute; right: 12px; bottom: 12px; left: 12px; display: flex; gap: 10px; align-items: center; padding: 8px 10px; color: var(--ink); background: rgba(255,255,255,.94); border-left: 4px solid var(--cyan); font: 700 .76rem/1.35 "Noto Sans Devanagari",var(--sans); }
 .dipke-gag__art figcaption span { flex: 0 0 auto; font-size: .68rem; }
 .dipke-gag__copy { min-width: 0; padding: clamp(22px,3vw,34px); font-family: "Noto Sans Devanagari",var(--sans); }
@@ -95,8 +97,6 @@ h1 { max-width: 600px; margin: 0; font-size: clamp(2.3rem,3.6vw,3.45rem); line-h
 .arrest-meter b { font-size: .9rem; }
 .arrest-meter small { color: #bac1c6; font-size: .7rem; }
 .dipke-gag blockquote { margin: 0 0 13px; padding: 13px 14px; color: var(--ink); background: var(--coral); border-left: 5px solid var(--cyan); font-size: 1.02rem; font-weight: 700; line-height: 1.45; }
-.fiction-label { margin: 0; color: #c8ced2; font-size: .73rem; line-height: 1.5; }
-.fiction-label b { color: var(--cyan); }
 .section-head { display: grid; grid-template-columns: 1.2fr .8fr; gap: 30px; align-items: end; margin-bottom: 18px; }
 .section-head--tight { margin-bottom: 12px; }
 .section-head h2,.faq h2,.quip h2,.critique h2 { margin: 0; font-size: clamp(1.45rem,2.5vw,2.45rem); line-height: 1.03; letter-spacing: -.045em; }
@@ -117,6 +117,8 @@ h1 { max-width: 600px; margin: 0; font-size: clamp(2.3rem,3.6vw,3.45rem); line-h
 .faq details:last-child { border-bottom: 1px solid var(--line); }
 .faq summary { padding: 12px 4px; font-size: .88rem; font-weight: 700; cursor: pointer; }
 .faq details p { margin: 0; padding: 0 26px 13px 4px; color: var(--muted); font-size: .79rem; }
+.faq details p a { color: var(--cyan-dark); font-weight: 700; }
+.faq .medical-link { display: inline-block; margin-top: 6px; }
 .quip { display: flex; flex-direction: column; justify-content: space-between; background: var(--coral); }
 .quip blockquote { min-height: 5em; margin: 28px 0 18px; padding: 14px 0 14px 16px; border-left: 5px solid var(--ink); font-size: clamp(1.1rem,2vw,1.55rem); font-weight: 800; line-height: 1.18; }
 .quip.is-spinning blockquote { animation: blink .28s steps(2) 2; }
