@@ -60,6 +60,6 @@
     get samosasDelivered() {
       return samosasDelivered;
     },
-    samosaCountIsSatire: true
+    samosaCountIsFictional: true
   });
 })();
