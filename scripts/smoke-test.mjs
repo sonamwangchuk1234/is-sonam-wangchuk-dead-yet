@@ -11,21 +11,28 @@ const css = await read("styles.css");
 const js = await read("app.js");
 const sourceData = JSON.parse(await read("data/sources.json"));
 
-for (const path of ["index.html", "styles.css", "app.js", "assets/wangchuk-awkward-cot.webp", "data/sources.json", ".nojekyll"]) {
+for (const path of ["index.html", "styles.css", "app.js", "assets/wangchuk-awkward-cot.webp", "assets/dipke-arrest-plea.webp", "data/sources.json", ".nojekyll"]) {
   await access(resolve(root, path));
 }
 
 assert.match(html, /<title>Is Sonam Wangchuk Dead Yet\?/);
-assert.match(html, /styles\.css\?v=3/);
-assert.match(html, /app\.js\?v=3/);
+assert.match(html, /styles\.css\?v=4/);
+assert.match(html, /app\.js\?v=4/);
 assert.match(html, /This is not a fan page/);
 assert.match(html, /Samosas eaten by Dipke\*/);
 assert.match(html, /SATIRE ONLY/);
 assert.match(html, /Entirely invented metric/);
-assert.match(html, /The samosa number is fabricated/);
+assert.match(html, /The samosa number and the arrest count/);
 assert.match(html, /EDITORIAL POSITION/);
 assert.match(html, /assets\/wangchuk-awkward-cot\.webp/);
 assert.match(html, /Editorial cartoon of Sonam Wangchuk lying stiffly/);
+assert.match(html, /assets\/dipke-arrest-plea\.webp/);
+assert.match(html, /Editorial cartoon of Abhijeet Dipke kneeling/);
+assert.match(html, /अभिजीत दिपके ने पुलिस से/);
+assert.match(html, /“X” बार/);
+assert.match(html, /कैमरा एंगल एफ़आईआर नहीं होता/);
+assert.match(html, /पूर्णतः काल्पनिक व्यंग्य/);
+assert.match(html, /arrest count, dialogue, and scene are fabricated/);
 assert.match(html, /does not predict or celebrate injury or death/i);
 assert.doesNotMatch(html, /Accountability\.exe/i);
 assert.doesNotMatch(html, /\bbauna\b/i);
@@ -53,9 +60,14 @@ for (const src of [...html.matchAll(/src="([^"]+)"/g)].map((match) => match[1]))
   await access(resolve(root, src.split("?")[0]));
 }
 
-const imageStat = await stat(resolve(root, "assets/wangchuk-awkward-cot.webp"));
-assert(imageStat.size > 100_000, "editorial cartoon unexpectedly small or missing");
-assert(imageStat.size < 800_000, "editorial cartoon is not web-optimized");
+const imagePaths = ["assets/wangchuk-awkward-cot.webp", "assets/dipke-arrest-plea.webp"];
+const imageSizes = [];
+for (const imagePath of imagePaths) {
+  const imageStat = await stat(resolve(root, imagePath));
+  assert(imageStat.size > 100_000, `${imagePath} unexpectedly small or missing`);
+  assert(imageStat.size < 800_000, `${imagePath} is not web-optimized`);
+  imageSizes.push(imageStat.size);
+}
 
 const publicText = `${html}\n${css}\n${js}\n${JSON.stringify(sourceData)}`;
 assert.doesNotMatch(publicText, /\/home\/hermes|\/mnt\/[a-z]\//i);
@@ -68,4 +80,4 @@ const utcDay = (dateLike) => {
 const calculatedDay = Math.floor((utcDay(sourceData.status.checked_at) - utcDay(sourceData.status.fast_start_date)) / 86_400_000) + 1;
 assert.equal(calculatedDay, sourceData.status.fast_day_inclusive);
 
-console.log(`smoke-test: PASS (${ids.length} IDs, ${streakDays.length} chart days, ${sourceData.sources.length} sources, image ${imageStat.size} bytes)`);
+console.log(`smoke-test: PASS (${ids.length} IDs, ${streakDays.length} chart days, ${sourceData.sources.length} sources, images ${imageSizes.join("+")} bytes)`);
