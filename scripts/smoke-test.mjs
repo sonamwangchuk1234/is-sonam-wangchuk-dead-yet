@@ -16,8 +16,8 @@ for (const path of ["index.html", "styles.css", "app.js", "assets/wangchuk-awkwa
 }
 
 assert.match(html, /<title>Is Sonam Wangchuk Dead Yet\?/);
-assert.match(html, /styles\.css\?v=5/);
-assert.match(html, /app\.js\?v=5/);
+assert.match(html, /styles\.css\?v=6/);
+assert.match(html, /app\.js\?v=6/);
 assert.match(html, /This is not a fan page/);
 assert.match(html, /Samosas eaten by Dipke\*/);
 assert.match(html, /Interactive site gag/);
@@ -25,17 +25,20 @@ assert.match(html, /id="samosa-button"/);
 assert.match(html, /Feed Dipke a samosa \+1/);
 assert.doesNotMatch(html, /id="share-button"/);
 assert.match(html, /The samosa number and the arrest count/);
-assert.match(html, /EDITORIAL POSITION/);
 assert.match(html, /assets\/wangchuk-awkward-cot\.webp/);
 assert.match(html, /Editorial cartoon of Sonam Wangchuk lying stiffly/);
 assert.match(html, /assets\/dipke-arrest-plea\.webp/);
-assert.match(html, /Editorial cartoon of Abhijeet Dipke standing/);
+assert.match(html, /Editorial cartoon of Abhijeet Dipke, a proportionally short adult, standing/);
 assert.match(html, /two standing police officers/);
 assert.match(html, /अभिजीत दिपके ने पुलिस से/);
 assert.match(html, /“X” बार/);
 assert.match(html, /कैमरा एंगल एफ़आईआर नहीं होता/);
 assert.match(html, /arrest count, dialogue, and scene are fabricated/);
 assert.match(html, /does not predict or celebrate injury or death/i);
+assert.match(html, /id="evidence"/);
+assert.match(html, /class="source-drawer"/);
+assert.match(html, /Open source ledger/);
+assert.doesNotMatch(html, /id="streak"|id="quip-button"|id="critique-title"/);
 assert.match(html, /Our editorial suspicion: probably—but it is not medically proven/);
 assert.match(html, /Blood pressure, glucose and weight loss are nonspecific/);
 assert.match(html, /beta-hydroxybutyrate \(BHB\) or urinary ketones/);
@@ -43,7 +46,8 @@ assert.match(html, /support—not prove—a water-only fast/);
 assert.equal((html.match(/PARODY \/ SATIRE/g) || []).length, 1);
 assert.doesNotMatch(html, /Accountability\.exe/i);
 assert.doesNotMatch(html, /\bbauna\b/i);
-assert.match(css, /grid-template-columns: repeat\(19/);
+assert.match(css, /\.evidence-grid/);
+assert.match(css, /\.source-drawer/);
 assert.match(css, /prefers-reduced-motion/);
 assert.match(js, /initialSamosaCount = 404/);
 assert.match(js, /samosaButton\.addEventListener/);
@@ -56,11 +60,6 @@ assert.equal(sourceData.sources.length, 8);
 assert(sourceData.sources.some((source) => source.id === "prolonged-fasting-review"));
 assert(sourceData.sources.some((source) => source.id === "fasting-ketosis-1610"));
 assert(sourceData.sources.some((source) => source.id === "ketone-measurement-review"));
-
-const streakDays = [...html.matchAll(/data-day="(\d{2})"/g)].map((match) => match[1]);
-assert.equal(streakDays.length, 19);
-assert.equal(streakDays.at(0), "01");
-assert.equal(streakDays.at(-1), "19");
 
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
 assert.equal(new Set(ids).size, ids.length, "duplicate IDs found");
@@ -93,4 +92,4 @@ const utcDay = (dateLike) => {
 const calculatedDay = Math.floor((utcDay(sourceData.status.checked_at) - utcDay(sourceData.status.fast_start_date)) / 86_400_000) + 1;
 assert.equal(calculatedDay, sourceData.status.fast_day_inclusive);
 
-console.log(`smoke-test: PASS (${ids.length} IDs, ${streakDays.length} chart days, ${sourceData.sources.length} sources, images ${imageSizes.join("+")} bytes)`);
+console.log(`smoke-test: PASS (${ids.length} IDs, ${sourceData.sources.length} sources, images ${imageSizes.join("+")} bytes)`);

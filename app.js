@@ -17,33 +17,6 @@
     node.textContent = String(verifiedFastDay);
   });
 
-  const quips = [
-    "Day 19: the body may be fasting; the publicity machine is not.",
-    "One cot. One bottle. Unlimited moral grandstanding.",
-    "The protest remains fully charged on camera batteries.",
-    "Inventor discovers a renewable resource: public guilt.",
-    "Food intake down. Headline intake at an all-time high.",
-    "The most crowded part of the hunger strike is the camera angle.",
-    "Breaking: self-denial has once again been mistaken for an argument."
-  ];
-
-  const quipButton = document.querySelector("#quip-button");
-  const quipOutput = document.querySelector("#quip-output");
-  let currentQuip = 0;
-
-  if (quipButton && quipOutput) {
-    quipButton.addEventListener("click", () => {
-      let nextQuip = currentQuip;
-      while (nextQuip === currentQuip && quips.length > 1) {
-        nextQuip = Math.floor(Math.random() * quips.length);
-      }
-      currentQuip = nextQuip;
-      quipOutput.textContent = `“${quips[currentQuip]}”`;
-      quipOutput.parentElement.classList.remove("is-spinning");
-      void quipOutput.parentElement.offsetWidth;
-      quipOutput.parentElement.classList.add("is-spinning");
-    });
-  }
 
   const samosaButton = document.querySelector("#samosa-button");
   const samosaFeedback = document.querySelector("#samosa-feedback");
